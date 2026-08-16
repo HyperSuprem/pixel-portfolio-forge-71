@@ -11,7 +11,7 @@ export function TrafficVisual() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const green = 2200 + roads[active].density * 2600;
+    const green = 2200 + (roads[active]?.density ?? 0.5) * 2600;
     const t = setTimeout(() => setActive((a) => (a + 1) % roads.length), green);
     return () => clearTimeout(t);
   }, [active]);
