@@ -63,15 +63,16 @@ export function Hero() {
             </dl>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[20rem] lg:col-span-5">
+          <div className="relative mx-auto w-full max-w-[26rem] lg:col-span-5">
             <div className="glow-ring relative aspect-square overflow-hidden rounded-full border border-border">
               <img
                 src={portrait.url}
                 alt="Portrait of Suprem Timsina"
                 width={849}
                 height={1259}
-                className="h-full w-full object-cover object-top"
+                className="h-full w-full object-cover object-[50%_22%]"
               />
+
               <div
                 className="absolute inset-0 rounded-full bg-gradient-to-t from-background/60 via-transparent to-transparent"
                 aria-hidden="true"
