@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import portrait from "@/assets/suprem.jpg.asset.json";
 
 const stats = [
@@ -76,16 +76,6 @@ export function Hero() {
                 className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent"
                 aria-hidden="true"
               />
-            </div>
-
-            <div className="card-surface absolute -bottom-6 -left-4 max-w-[15rem] p-4 backdrop-blur-sm">
-              <p className="font-mono text-[0.7rem] text-primary-bright">&lt;/&gt; currently</p>
-              <p className="mt-1 text-sm leading-snug">
-                Building AI tools &amp; embedded systems at SIT Tumkur.
-              </p>
-              <p className="mt-3 flex items-center gap-1.5 text-xs text-muted-foreground">
-                <MapPin size={12} /> Tumkur, India
-              </p>
             </div>
           </div>
         </div>
