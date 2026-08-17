@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import portrait from "@/assets/suprem.jpg.asset.json";
 
 const items = [
   { id: "home", label: "Home" },
@@ -55,9 +56,11 @@ export function Nav() {
           className="grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:flex lg:justify-between"
         >
           <a href="#home" className="flex min-w-0 items-center gap-2">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary font-mono text-sm font-bold text-primary-foreground">
-              S
-            </span>
+            <img
+              src={portrait.url}
+              alt="Suprem Timsina"
+              className="h-8 w-8 shrink-0 rounded-full border border-border object-cover object-[50%_22%]"
+            />
             <span className="truncate font-display text-sm font-semibold tracking-tight">
               Suprem Timsina
             </span>
