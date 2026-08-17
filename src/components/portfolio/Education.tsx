@@ -1,5 +1,6 @@
 import { GraduationCap, Sparkles } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 
 const timeline = [
@@ -26,8 +27,7 @@ const timeline = [
 
 export function Education() {
   return (
-    <section id="education" className="relative scroll-mt-24 border-y border-border bg-surface/30">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <Section id="education" alt>
         <Reveal>
           <SectionHeading
             index="02"
@@ -37,8 +37,8 @@ export function Education() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_0.6fr]">
-          <ol className="relative space-y-6 border-l border-border pl-6">
+        <div className="mt-12 grid gap-8 lg:grid-cols-12">
+          <ol className="relative space-y-6 border-l border-border pl-6 lg:col-span-8">
             {timeline.map((item, i) => (
               <Reveal as="li" key={item.title} delay={i * 90} className="relative">
                 <span
@@ -47,7 +47,7 @@ export function Education() {
                   }`}
                   aria-hidden="true"
                 />
-                <div className="lift-card p-6">
+                <div className="lift-card p-6 sm:p-7">
                   <div className="flex flex-wrap items-center gap-3">
                     <GraduationCap size={16} className="text-primary" />
                     <h3 className="text-lg font-semibold">{item.title}</h3>
@@ -65,10 +65,10 @@ export function Education() {
             ))}
           </ol>
 
-          <Reveal delay={200}>
+          <Reveal delay={200} className="lg:col-span-4">
             <div className="lift-card flex h-full flex-col justify-center p-8 text-center">
               <Sparkles size={18} className="mx-auto text-primary" />
-              <p className="mt-4 text-5xl font-extrabold text-primary">9.8</p>
+              <p className="mt-4 text-5xl font-extrabold text-primary-bright">9.8</p>
               <p className="label-mono mt-2">Semester 2 CGPA</p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 Up from 8.75 in semester one — proof that consistency compounds.
@@ -76,7 +76,6 @@ export function Education() {
             </div>
           </Reveal>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

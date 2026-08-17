@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { Mail, Linkedin, Send, CheckCircle2 } from "lucide-react";
 import { z } from "zod";
 import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 
 const schema = z.object({
@@ -46,8 +47,7 @@ export function Contact() {
     "w-full rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:ring-2 focus:ring-ring/30 focus:outline-none";
 
   return (
-    <section id="contact" className="scroll-mt-24 border-t border-border bg-surface/30">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <Section id="contact" alt>
         <Reveal>
           <SectionHeading
             index="07"
@@ -57,14 +57,14 @@ export function Contact() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-          <Reveal delay={80} className="space-y-4">
+        <div className="mt-12 grid gap-6 lg:grid-cols-12">
+          <Reveal delay={80} className="space-y-4 lg:col-span-5">
             <a
               href="mailto:"
               className="lift-card flex items-center gap-4 p-5"
               aria-label="Email Suprem Timsina"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary-bright">
                 <Mail size={18} />
               </span>
               <span>
@@ -79,7 +79,7 @@ export function Contact() {
               className="lift-card flex items-center gap-4 p-5"
               aria-label="LinkedIn profile"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary-bright">
                 <Linkedin size={18} />
               </span>
               <span>
@@ -89,7 +89,7 @@ export function Contact() {
             </a>
           </Reveal>
 
-          <Reveal delay={160}>
+          <Reveal delay={160} className="lg:col-span-7">
             <form onSubmit={onSubmit} noValidate className="lift-card p-6 sm:p-8">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
@@ -158,14 +158,14 @@ export function Contact() {
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
+                  className="btn-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
                 >
                   Send Message
                   <Send size={15} />
                 </button>
                 <p aria-live="polite" className="text-sm">
                   {sent ? (
-                    <span className="inline-flex items-center gap-2 text-primary">
+                    <span className="inline-flex items-center gap-2 text-primary-bright">
                       <CheckCircle2 size={15} /> Thanks — your message is ready to send.
                     </span>
                   ) : null}
@@ -174,7 +174,6 @@ export function Contact() {
             </form>
           </Reveal>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

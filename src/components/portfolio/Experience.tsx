@@ -1,5 +1,6 @@
 import { Briefcase, CircleDot } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 
 const duties = [
@@ -12,14 +13,14 @@ const duties = [
 
 export function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <Section id="experience">
       <Reveal>
         <SectionHeading index="06" label="Experience" title="Where I've worked" />
       </Reveal>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_0.6fr]">
-        <Reveal delay={80}>
-          <article className="lift-card p-7">
+      <div className="mt-12 grid gap-6 lg:grid-cols-12">
+        <Reveal delay={80} className="lg:col-span-8">
+          <article className="lift-card h-full p-6 sm:p-8">
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary">
                 <Briefcase size={18} />
@@ -56,8 +57,8 @@ export function Experience() {
           </article>
         </Reveal>
 
-        <Reveal delay={160}>
-          <div className="lift-card flex h-full flex-col justify-center p-7">
+        <Reveal delay={160} className="lg:col-span-4">
+          <div className="lift-card flex h-full flex-col justify-center p-6 sm:p-8">
             <p className="flex items-center gap-2 text-sm font-semibold">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/70" />
@@ -71,13 +72,13 @@ export function Experience() {
             </p>
             <a
               href="#contact"
-              className="mt-6 inline-flex w-fit items-center rounded-full border border-primary/40 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="btn-ghost mt-6 w-fit"
             >
               Start a conversation
             </a>
           </div>
         </Reveal>
       </div>
-    </section>
+    </Section>
   );
 }
