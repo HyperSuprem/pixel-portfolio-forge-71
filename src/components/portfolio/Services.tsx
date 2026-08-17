@@ -8,6 +8,7 @@ import {
   Handshake,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 
 const services = [
@@ -50,17 +51,16 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-24 border-y border-border bg-surface/30">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <Section id="services" alt>
         <Reveal>
           <SectionHeading index="05" label="Services" title="What I can do" />
         </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 70}>
-              <article className="lift-card group h-full p-6">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary transition-colors group-hover:border-primary/50">
+              <article className="lift-card group h-full p-6 sm:p-7">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary-bright transition-colors group-hover:border-primary/50">
                   <s.icon size={18} />
                 </span>
                 <h3 className="mt-5 text-base font-semibold">{s.title}</h3>
@@ -69,7 +69,6 @@ export function Services() {
             </Reveal>
           ))}
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

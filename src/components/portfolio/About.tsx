@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 
 const focus = [
@@ -11,13 +12,13 @@ const focus = [
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <Section id="about">
       <Reveal>
         <SectionHeading index="01" label="About me" title="A student who likes shipping things" />
       </Reveal>
 
-      <div className="mt-12 grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
-        <Reveal delay={80} className="space-y-5 text-base leading-relaxed text-muted-foreground">
+      <div className="mt-12 grid gap-8 lg:grid-cols-12">
+        <Reveal delay={80} className="space-y-5 text-base leading-relaxed text-muted-foreground lg:col-span-7">
           <p>
             I'm a Computer Science undergraduate at Siddaganga Institute of Technology, Tumkur.
             Most of my time goes into software development — writing C, Python and Java, breaking
@@ -37,8 +38,8 @@ export function About() {
           </p>
         </Reveal>
 
-        <Reveal delay={160}>
-          <div className="lift-card p-6">
+        <Reveal delay={160} className="lg:col-span-5">
+          <div className="lift-card h-full p-6 sm:p-7">
             <p className="label-mono">Current focus</p>
             <ul className="mt-5 space-y-3">
               {focus.map((item, i) => (
@@ -53,6 +54,6 @@ export function About() {
           </div>
         </Reveal>
       </div>
-    </section>
+    </Section>
   );
 }

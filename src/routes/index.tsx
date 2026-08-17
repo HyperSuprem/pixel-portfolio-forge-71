@@ -42,7 +42,7 @@ function Index() {
         <Contact />
       </main>
       <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="container-grid flex flex-col gap-2 py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono">© {new Date().getFullYear()} Suprem Timsina</p>
           <p className="font-mono">Built with curiosity · Tumkur, India</p>
         </div>

@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 
 const groups = [
@@ -40,18 +41,18 @@ const groups = [
 
 export function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <Section id="skills">
       <Reveal>
         <SectionHeading index="03" label="Skills" title="Tools I build and think with" />
       </Reveal>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2">
+      <div className="mt-12 grid gap-6 sm:grid-cols-2">
         {groups.map((group, i) => (
           <Reveal key={group.title} delay={i * 90}>
-            <div className="lift-card h-full p-6">
+            <div className="lift-card h-full p-6 sm:p-7">
               <div className="flex items-baseline justify-between">
                 <h3 className="text-base font-semibold">{group.title}</h3>
-                <span className="font-mono text-[0.7rem] text-primary">
+                <span className="font-mono text-[0.7rem] text-primary-bright">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
@@ -59,7 +60,7 @@ export function Skills() {
                 {group.items.map((item) => (
                   <li
                     key={item.name}
-                    className="rounded-full border border-border bg-surface-2 px-3 py-1.5 text-sm text-foreground/90 transition-colors hover:border-primary/50 hover:text-primary"
+                    className="rounded-full border border-border bg-surface-2 px-3 py-1.5 text-sm text-foreground/90 transition-colors hover:border-primary/50 hover:text-primary-bright"
                   >
                     {item.name}
                     {item.note ? (
@@ -74,6 +75,6 @@ export function Skills() {
           </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

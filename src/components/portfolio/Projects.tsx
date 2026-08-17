@@ -1,5 +1,6 @@
 import { Github, ExternalLink, Cpu } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
 import { TrafficVisual } from "./TrafficVisual";
 
@@ -43,7 +44,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <Section id="projects">
       <Reveal>
         <SectionHeading
           index="04"
@@ -59,7 +60,7 @@ export function Projects() {
           <div className="grid gap-0 lg:grid-cols-2">
             <div className="p-7 sm:p-9">
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs text-primary">03</span>
+                <span className="font-mono text-xs text-primary-bright">03</span>
                 <span className="rounded-full border border-primary/40 px-2.5 py-0.5 font-mono text-[0.65rem] tracking-wider text-primary uppercase">
                   Featured
                 </span>
@@ -106,7 +107,7 @@ export function Projects() {
         </article>
       </Reveal>
 
-      <div className="mt-6 grid gap-5 lg:grid-cols-3">
+      <div className="mt-6 grid gap-6 lg:grid-cols-3">
         {projects.map((p, i) => (
           <Reveal key={p.id} delay={i * 110}>
             <article className="lift-card flex h-full flex-col overflow-hidden">
@@ -122,7 +123,7 @@ export function Projects() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-primary">{p.id}</span>
+                  <span className="font-mono text-xs text-primary-bright">{p.id}</span>
                   {p.wip ? (
                     <span className="font-mono text-[0.65rem] tracking-wider text-muted-foreground uppercase">
                       In progress
@@ -160,6 +161,6 @@ export function Projects() {
           </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
