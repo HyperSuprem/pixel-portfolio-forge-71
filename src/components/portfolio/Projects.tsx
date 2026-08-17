@@ -28,7 +28,7 @@ const projects = [
       "User interaction",
       "Transaction handling",
     ],
-    tech: ["C", "Java"],
+    tech: ["Python"],
     snippet: ["> 1. Withdraw  2. Deposit", "> select option: 1", "> balance updated"],
   },
   {
