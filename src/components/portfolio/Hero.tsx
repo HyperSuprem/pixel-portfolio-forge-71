@@ -9,7 +9,7 @@ const stats = [
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section id="home" className="relative overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-16">
       <div className="grid-bg pointer-events-none absolute inset-0" aria-hidden="true" />
       <div
         className="pointer-events-none absolute top-[-20%] left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]"
