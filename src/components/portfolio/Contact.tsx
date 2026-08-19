@@ -81,6 +81,7 @@ export function Contact() {
               href="https://www.linkedin.com/in/suprem-timsina-387086392"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openExternal}
               className="lift-card flex items-center gap-4 p-5"
               aria-label="LinkedIn profile"
             >
@@ -96,6 +97,7 @@ export function Contact() {
               href="https://wa.me/message/UVMLNA4ZVH46O1"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openExternal}
               className="lift-card flex items-center gap-4 p-5"
               aria-label="Chat on WhatsApp"
             >
@@ -111,6 +113,7 @@ export function Contact() {
               href="https://www.instagram.com/akasuprem_?igsi=MTd2enQ3NjZqODdrMg=="
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openExternal}
               className="lift-card flex items-center gap-4 p-5"
               aria-label="Instagram profile"
             >
