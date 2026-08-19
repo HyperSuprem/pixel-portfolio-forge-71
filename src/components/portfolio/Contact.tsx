@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Mail, Linkedin, Send, CheckCircle2, Instagram, MessageCircle } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
@@ -205,15 +206,21 @@ export function Contact() {
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <button
                   type="submit"
-                  className="btn-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
+                  disabled={sending}
+                  className="btn-primary disabled:opacity-60 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
                 >
-                  Send Message
+                  {sending ? "Sending..." : "Send Message"}
                   <Send size={15} />
                 </button>
                 <p aria-live="polite" className="text-sm">
                   {sent ? (
                     <span className="inline-flex items-center gap-2 text-primary-bright">
-                      <CheckCircle2 size={15} /> Thanks — your message is ready to send.
+                      <CheckCircle2 size={15} /> Thanks — your message has been delivered.
+                    </span>
+                  ) : null}
+                  {failed ? (
+                    <span className="text-destructive">
+                      Something went wrong. Please email me directly instead.
                     </span>
                   ) : null}
                 </p>
