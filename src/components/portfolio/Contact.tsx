@@ -60,7 +60,7 @@ export function Contact() {
         <div className="mt-12 grid gap-6 lg:grid-cols-12">
           <Reveal delay={80} className="space-y-4 lg:col-span-5">
             <a
-              href="mailto:"
+              href="mailto:timsinasuprem11@gmail.com"
               className="lift-card flex items-center gap-4 p-5"
               aria-label="Email Suprem Timsina"
             >
@@ -69,11 +69,11 @@ export function Contact() {
               </span>
               <span>
                 <span className="label-mono block">Email</span>
-                <span className="mt-1 block text-sm">[Your Email]</span>
+                <span className="mt-1 block text-sm">timsinasuprem11@gmail.com</span>
               </span>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/suprem-timsina-387086392"
               target="_blank"
               rel="noopener noreferrer"
               className="lift-card flex items-center gap-4 p-5"
@@ -84,7 +84,7 @@ export function Contact() {
               </span>
               <span>
                 <span className="label-mono block">LinkedIn</span>
-                <span className="mt-1 block text-sm">[Your LinkedIn Profile]</span>
+                <span className="mt-1 block text-sm">linkedin.com/in/suprem-timsina</span>
               </span>
             </a>
           </Reveal>
