@@ -1,4 +1,5 @@
-import { Briefcase, CircleDot } from "lucide-react";
+import { CircleDot } from "lucide-react";
+import navadaLogo from "@/assets/navada-logo.png.asset.json";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
