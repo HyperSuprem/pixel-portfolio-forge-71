@@ -43,6 +43,11 @@ export function Contact() {
     form.reset();
   }
 
+  function openExternal(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    window.open(e.currentTarget.href, "_blank", "noopener,noreferrer");
+  }
+
   const field =
     "w-full rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:ring-2 focus:ring-ring/30 focus:outline-none";
 
