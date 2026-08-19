@@ -88,7 +88,7 @@ export function Contact() {
               </span>
             </a>
             <a
-              href="https://wa.me/919835087894"
+              href="https://wa.me/message/UVMLNA4ZVH46O1"
               target="_blank"
               rel="noopener noreferrer"
               className="lift-card flex items-center gap-4 p-5"
@@ -103,7 +103,7 @@ export function Contact() {
               </span>
             </a>
             <a
-              href="https://www.instagram.com/akasuprem_/"
+              href="https://www.instagram.com/akasuprem_?igsi=MTd2enQ3NjZqODdrMg=="
               target="_blank"
               rel="noopener noreferrer"
               className="lift-card flex items-center gap-4 p-5"
