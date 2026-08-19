@@ -1,4 +1,5 @@
-import { Briefcase, CircleDot } from "lucide-react";
+import { CircleDot } from "lucide-react";
+import navadaLogo from "@/assets/navada-logo.png.asset.json";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
@@ -22,8 +23,12 @@ export function Experience() {
         <Reveal delay={80} className="lg:col-span-8">
           <article className="lift-card h-full p-6 sm:p-8">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary">
-                <Briefcase size={18} />
+              <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-border bg-white">
+                <img
+                  src={navadaLogo.url}
+                  alt="Navada Travel & Tours logo"
+                  className="h-full w-full object-contain p-0.5"
+                />
               </span>
               <div>
                 <h3 className="text-lg font-semibold">Digital Marketing Intern</h3>
