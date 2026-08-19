@@ -87,6 +87,36 @@ export function Contact() {
                 <span className="mt-1 block text-sm">linkedin.com/in/suprem-timsina</span>
               </span>
             </a>
+            <a
+              href="https://wa.me/919835087894"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lift-card flex items-center gap-4 p-5"
+              aria-label="Chat on WhatsApp"
+            >
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary-bright">
+                <MessageCircle size={18} />
+              </span>
+              <span>
+                <span className="label-mono block">WhatsApp</span>
+                <span className="mt-1 block text-sm">+91 98350 87894</span>
+              </span>
+            </a>
+            <a
+              href="https://www.instagram.com/akasuprem_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lift-card flex items-center gap-4 p-5"
+              aria-label="Instagram profile"
+            >
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-surface-2 text-primary-bright">
+                <Instagram size={18} />
+              </span>
+              <span>
+                <span className="label-mono block">Instagram</span>
+                <span className="mt-1 block text-sm">@akasuprem_</span>
+              </span>
+            </a>
           </Reveal>
 
           <Reveal delay={160} className="lg:col-span-7">
