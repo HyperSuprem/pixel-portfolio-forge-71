@@ -20,8 +20,10 @@ type Errors = Partial<Record<"name" | "email" | "message", string>>;
 export function Contact() {
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
@@ -35,13 +37,28 @@ export function Contact() {
       });
       setErrors(next);
       setSent(false);
+      setFailed(false);
       return;
     }
 
     setErrors({});
+    setFailed(false);
+    setSending(true);
+
+    const { error } = await supabase.from("contact_messages").insert(result.data);
+
+    setSending(false);
+
+    if (error) {
+      setSent(false);
+      setFailed(true);
+      return;
+    }
+
     setSent(true);
     form.reset();
   }
+
 
   const field =
     "w-full rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:ring-2 focus:ring-ring/30 focus:outline-none";
