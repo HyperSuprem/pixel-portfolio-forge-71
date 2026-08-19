@@ -43,6 +43,11 @@ export function Contact() {
     form.reset();
   }
 
+  function openExternal(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    window.open(e.currentTarget.href, "_blank", "noopener,noreferrer");
+  }
+
   const field =
     "w-full rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:ring-2 focus:ring-ring/30 focus:outline-none";
 
@@ -76,6 +81,7 @@ export function Contact() {
               href="https://www.linkedin.com/in/suprem-timsina-387086392"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openExternal}
               className="lift-card flex items-center gap-4 p-5"
               aria-label="LinkedIn profile"
             >
@@ -91,6 +97,7 @@ export function Contact() {
               href="https://wa.me/message/UVMLNA4ZVH46O1"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openExternal}
               className="lift-card flex items-center gap-4 p-5"
               aria-label="Chat on WhatsApp"
             >
@@ -106,6 +113,7 @@ export function Contact() {
               href="https://www.instagram.com/akasuprem_?igsi=MTd2enQ3NjZqODdrMg=="
               target="_blank"
               rel="noopener noreferrer"
+              onClick={openExternal}
               className="lift-card flex items-center gap-4 p-5"
               aria-label="Instagram profile"
             >
