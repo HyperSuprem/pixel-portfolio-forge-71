@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Mail, Linkedin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Linkedin, Send, CheckCircle2, Instagram, MessageCircle } from "lucide-react";
 import { z } from "zod";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
