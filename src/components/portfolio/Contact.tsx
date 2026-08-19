@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Mail, Linkedin, Send, CheckCircle2, Instagram, MessageCircle } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 import { Reveal } from "./Reveal";
 import { Section } from "./Section";
 import { SectionHeading } from "./SectionHeading";
@@ -20,8 +21,10 @@ type Errors = Partial<Record<"name" | "email" | "message", string>>;
 export function Contact() {
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
@@ -35,13 +38,28 @@ export function Contact() {
       });
       setErrors(next);
       setSent(false);
+      setFailed(false);
       return;
     }
 
     setErrors({});
+    setFailed(false);
+    setSending(true);
+
+    const { error } = await supabase.from("contact_messages").insert(result.data);
+
+    setSending(false);
+
+    if (error) {
+      setSent(false);
+      setFailed(true);
+      return;
+    }
+
     setSent(true);
     form.reset();
   }
+
 
   const field =
     "w-full rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary/60 focus:ring-2 focus:ring-ring/30 focus:outline-none";
@@ -188,15 +206,21 @@ export function Contact() {
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <button
                   type="submit"
-                  className="btn-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
+                  disabled={sending}
+                  className="btn-primary disabled:opacity-60 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none"
                 >
-                  Send Message
+                  {sending ? "Sending..." : "Send Message"}
                   <Send size={15} />
                 </button>
                 <p aria-live="polite" className="text-sm">
                   {sent ? (
                     <span className="inline-flex items-center gap-2 text-primary-bright">
-                      <CheckCircle2 size={15} /> Thanks — your message is ready to send.
+                      <CheckCircle2 size={15} /> Thanks — your message has been delivered.
+                    </span>
+                  ) : null}
+                  {failed ? (
+                    <span className="text-destructive">
+                      Something went wrong. Please email me directly instead.
                     </span>
                   ) : null}
                 </p>
